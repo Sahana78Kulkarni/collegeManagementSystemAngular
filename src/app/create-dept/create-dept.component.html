@@ -1,0 +1,27 @@
+<div class="container-fluid h-custom">
+    <div class = "col-md-5 offset-md-3">
+    <h3 class="h3"><span class="text-danger">Create Department</span></h3>
+    <form class="form" [formGroup]="deptForm" (ngSubmit)="onSubmit()">        
+        <div class="form-outline mb-4">
+            <label class="form-label">Department Id:  </label>
+            <input type="number" class="form-control" id="id" [(ngModel)]="dept.id" name="id" formControlName="id">
+            <span style="color:red;" *ngIf="id && id.invalid && id.touched">This field is required</span>
+        </div>
+
+        <div class="form-outline mb-4">
+            <label  class="form-label">Department Name: </label>
+            <input type ="text" class="form-control" id="name"  [(ngModel)]="dept.name" name = "name" formControlName="name" > 
+           <span style="color:red;" *ngIf="name && name.invalid && name.touched">This field is required</span>          
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label">Department Code: </label>
+            <input type="text" class="form-control" id="code" [(ngModel)]="dept.code" name="code" formControlName="code">
+            <span style="color:red;" *ngIf="code && code.invalid && code.touched">This field is required</span>
+        </div>
+    <br>
+        <button class = "btn btn-success" type="submit" [disabled]="deptForm.invalid">Submit</button>  &nbsp;  &nbsp;  &nbsp;
+        <input type="reset" class="btn btn-primary" onclick="resetForm()"  value="Reset">
+    </form>
+    </div>
+</div>

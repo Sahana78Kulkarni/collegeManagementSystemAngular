@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="page-content drk-static-page-content">
+            <div class="col-md-12 about-content">
+                <h4 class="h4">
+                    <span class="text-danger">Faculty List</span>
+                </h4>
+              
+                <div class="table-responsive">
+                    <table class="table table-borderless" id="table1">
+                        <colgroup>
+                           
+                            <col span="5" style="background-color:blue ">
+                          </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Faculty_id</th>
+                                <th>Faculty Name</th>
+                                <th>Qualification</th>
+                                <th>Designation</th>
+                                <th>Experience</th>
+                                <th>Department Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="let faculty of faculties"><!--ngFor iterates on HTML elements 
+                            here faculties is array declares in faculty-list.component.ts file-->
+                                <td>{{faculty.id}}</td>
+                                <td>{{faculty.name}}</td>
+                                <td>{{faculty.qualification}}</td>
+                                <td>{{faculty.designation}}</td>
+                                <td>{{faculty.exp}}</td>
+                                <td>{{faculty.dept_code}}</td>
+                              
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,39 @@
+<div class="col-md-6 offset-md-3">
+
+    <h3>Update Faculty</h3>
+    <form class="form" [formGroup]="updateForm"  (ngSubmit)="onSubmit()">
+
+        <div class=" form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="faculty.name" name="name" formControlName="name">
+            <span style="color:red;" *ngIf="name && name.invalid && name.touched">This field is required</span> 
+        </div>
+
+        <div class=" form-group">
+            <label>Designation</label>
+            <input type="text" class="form-control" id="designation" [(ngModel)]="faculty.designation" name="designation" formControlName="designation">
+            <span style="color:red;" *ngIf="designation && designation.invalid && designation.touched">This field is required</span>  
+        </div>
+
+        <div class=" form-group">
+            <label>Qualification</label>
+            <input type="text" class="form-control" id="qualification" [(ngModel)]="faculty.qualification" name="qualification" formControlName="qualification">
+            <span style="color:red;" *ngIf="qualification && qualification.invalid && qualification.touched">This field is required</span>  
+        </div>
+
+        <div class=" form-group">
+            <label>Year of Experience</label>
+            <input type="number" class="form-control" id="exp" [(ngModel)]="faculty.exp" name="exp" formControlName="exp">
+            <span style="color:red;" *ngIf="exp && exp.invalid && exp.touched">This field is required</span>
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label">Department Code: </label>
+            <input type="text" class="form-control" id="dept_code" [(ngModel)]="faculty.dept_code" name="dept_code" formControlName="dept_code">
+            <span style="color:red;" *ngIf="dept_code && dept_code.invalid && dept_code.touched">This field is required</span>
+        </div>
+
+        <br>
+        <button class="btn btn-success" type="submit" [disabled]="updateForm.invalid">Submit</button> &nbsp; &nbsp; &nbsp;
+        <button  class="btn btn-warning" type="button" (click)="cancel()">Cancel</button>
+    </form>
+</div>

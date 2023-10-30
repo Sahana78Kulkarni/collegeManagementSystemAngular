@@ -1,0 +1,59 @@
+<div id="content">
+    <div class="container">
+        <div class="page-content">
+            <div class="row">
+                    <div class="col-md-8">
+                        <h4 class="classic-title">
+                            <span>Contact </span>
+                            <span class="text-danger">Us</span>
+                        </h4>                       
+                        <h4>
+                            <span class="text-danger">DRK Institute of Science and Technology</span>
+                        </h4>
+                        <p>
+                        Near Pragathi Nagar, Bowrampet (V),
+                        Hyderabad - 500043,</p>
+                        <ul type="none">
+                            <li><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;Telangana, India,</li>
+                            <li><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;&nbsp;Phone: +91-9000711899, +91-8790711899</li>
+                            <li><i class="fa-solid fa-fax"></i>&nbsp;&nbsp;&nbsp;Fax: 08418-242522</li>
+                            <li><i class="fa-regular fa-envelope"></i>&nbsp;&nbsp;&nbsp;Email : principal@drkist.edu.in</li>
+                            <li><i class="fa-solid fa-share-from-square"></i>&nbsp;&nbsp;&nbsp;Website : www.drkist.edu.in</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 contact-form">
+                        <div class="form-area ">
+                            <form  class="form" [formGroup]="formData" (ngSubmit)="onClickSubmit()"><br style="clear: both;" >
+                                <h4 class="h4" > <span class="text-danger">Contact Form</span></h4>
+                                <div class="form-group">                                    
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Name" name="name"  [(ngModel)]="contact.name" formControlName="name">
+                                    <span style="color:red;" *ngIf="name && name.invalid && name.touched">This field is required</span>
+                                </div> <br>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Email Id" name="email" [(ngModel)]="contact.email" formControlName="email">
+                                    <span style="color:red;" *ngIf="email && email.invalid && email.touched">This field is required</span>
+                                </div> <br>
+                                <div class="form-group">
+                                    <input type="tel" name="phoneNo" class="form-control" placeholder="Enter Mobile number" name="phoneNo" [(ngModel)]="contact.phoneNo" formControlName="phoneNo">
+                                    <span style="color:red;" *ngIf="phoneNo && phoneNo.invalid && phoneNo.touched">This field is required</span>
+                                </div> <br>
+                                <div class="form-group">
+                                   <textarea type="text" name="subject" class="form-control" placeholder="Enter Subject" name="subject" [(ngModel)]="contact.subject" formControlName="subject"></textarea>
+                                   <span style="color:red;" *ngIf="subject && subject.invalid && subject.touched">This field is required</span>
+                                </div> <br>
+                                <div class="form-group">
+                                    <textarea type="text" name="message" class="form-control" placeholder="Enter Message" name="message" [(ngModel)]="contact.message" formControlName="message"></textarea>
+                                    <span style="color:red;" *ngIf="message && message.invalid && message.touched">This field is required</span>
+                                </div>
+                                <br>
+                                <div class="example-button-row">
+                                <input type="submit" class="btn btn-success" value="Submit" [disabled]="formData.invalid"> &nbsp;&nbsp;
+                                    <input type="reset" class="btn btn-primary" onclick="resetForm()"  value="Reset">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="page-content drk-static-page-content">         
+              
+                <div class="container-fluid" >
+                    <div style="text-align: right;">
+                        <br>
+                          <button class="btn btn-success"  style=" background-color: #f4511e;"> <a class="nav-link" [routerLink]="['create-faculty']">Create Faculty &nbsp;&nbsp;<i class="fa fa-plus-square" aria-hidden="true"></i></a></button>
+                          &nbsp;  &nbsp;  &nbsp; 
+                          <button class="btn btn-warning" (click)="logout()"><a class="nav-link" [routerLink]="['logout']">Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a></button>
+                       
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>    
+            <div class="col-md-12 about-content">
+                <h3 class="h3"><span class="text-danger">Welcome to Admin Portal of DRKIST</span></h3>               
+                    <h4 class="h4"> Please select the Operation you want to perform.</h4>              
+                
+                <h4 class="h4">
+                    <span class="text-danger">Faculty List</span>
+                </h4>
+                   
+                <div class="table-responsive">
+                    <table class="table table-borderless" id="table1" >
+                        <thead  class="thead">
+                            <tr>
+                                <th>Faculty_id</th>
+                                <th>Faculty Name</th>
+                                <th>Qualification</th>
+                                <th>Designation</th>
+                                <th>Experience</th>
+                                <th>Department Code</th>
+                                <th>  </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="let faculty of faculties"><!--ngFor iterates on HTML elements 
+                            here faculties is array declares in faculty-list.component.ts file-->
+                                <td>{{faculty.id}}</td>
+                                <td>{{faculty.name}}</td>
+                                <td>{{faculty.qualification}}</td>
+                                <td>{{faculty.designation}}</td>
+                                <td>{{faculty.exp}}</td>
+                                <td>{{faculty.dept_code}}</td>
+                                <td>
+                                    <button (click)="updateFaculty(faculty.id)" class="btn btn-success" style="margin-left: 10px ">
+                                        <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                    </button>
+                                    <button (click)="deleteFaculty(faculty.id)" class="btn btn-danger" style="margin-left: 10px ">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </button>
+                                    <button (click)="facultyDetails(faculty.id)" class="btn btn-info" style="margin-left: 10px ">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.about-content {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.page-content h4 {
+    font-size: 19px;
+    line-height: 2em;
+}
+.drk-static-page-content {
+    min-height: 400px;
+}
+tr{
+    text-align: center;
+    background-color:#FFEFD5 ;
+}
+td{
+   text-wrap:stable;
+    padding: auto;
+}

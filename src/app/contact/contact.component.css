@@ -1,0 +1,30 @@
+.drk-static-page-content {
+    min-height: 400px;
+}
+.classic-title {
+    margin-top: 30px;
+}
+.page-content h4 {
+    font-size: 19px;
+    line-height: 2em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    color: #444;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+    display: table;
+  }
+  
+ 
